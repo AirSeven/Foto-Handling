@@ -72,28 +72,28 @@ for y = yearvec
                         fprintf('\n      %s',s_sub(k).name);
                         movefile([pwd,'\',s_sub(k).name],[pwd,'\',strngDir,'\',s_sub(k).name],'f');
                     end
-                    % --- Rename newly created folder acc. to pic examples
-                    if (ismember(upper(ext),{'*.JPG','*.JPEG','*.PNG','*.GIF','*.BMP','*.TIF'}))
-                        % show pics
-                        fg = figure('NumberTitle','Off','Name',strngDir);
-                        set(fg, 'Position', get(0,'ScreenSize'));
-                        for n=1:min(length(s_sub),6)
-                            subplot(2,3,n);
-                            imshow([pwd,'\',strngDir,'\',s_sub(n).name]);
-                        end
-                        % request Description
-                        strngDesc = inputdlg('Short Description:');
-                        close(fg);
-                        % rename folder (delete if Description == 'XXX')
-                        if strcmp(strngDesc,'XXX')
-                            rmdir([pwd,'\',strngDir],'s');
-                            fprintf('\nDirectory "%s" selected to be removed by user.',[pwd,'\',strngDir]);
-                        else
-                            movefile([pwd,'\',strngDir],[pwd,'\',strngDir,'_',strngDesc{:}]);
-                            fprintf('\n Renamed Directory to "%s", Next!',[pwd,'_',strngDesc{:}]);
-                        end
-                        % ---
-                    end
+%                     % --- Rename newly created folder acc. to pic examples
+%                     if (ismember(upper(ext),{'*.JPG','*.JPEG','*.PNG','*.GIF','*.BMP','*.TIF'}))
+%                         % show pics
+%                         fg = figure('NumberTitle','Off','Name',strngDir);
+%                         set(fg, 'Position', get(0,'ScreenSize'));
+%                         for n=1:min(length(s_sub),6)
+%                             subplot(2,3,n);
+%                             imshow([pwd,'\',strngDir,'\',s_sub(n).name]);
+%                         end
+%                         % request Description
+%                         strngDesc = inputdlg('Short Description:');
+%                         close(fg);
+%                         % rename folder (delete if Description == 'XXX')
+%                         if strcmp(strngDesc,'XXX')
+%                             rmdir([pwd,'\',strngDir],'s');
+%                             fprintf('\nDirectory "%s" selected to be removed by user.',[pwd,'\',strngDir]);
+%                         else
+%                             movefile([pwd,'\',strngDir],[pwd,'\',strngDir,'_',strngDesc{:}]);
+%                             fprintf('\n Renamed Directory to "%s", Next!',[pwd,'_',strngDesc{:}]);
+%                         end
+%                         % ---
+%                     end
                     fprintf('\n    ...done!');
                 end
             else
@@ -105,28 +105,28 @@ for y = yearvec
                     fprintf('\n      %s',s(k).name);
                     movefile([pwd,'\',s(k).name],[pwd,'\',strngDir,'\',s(k).name],'f')
                 end
-                if (ismember(upper(ext),{'*.JPG','*.JPEG','*.PNG','*.GIF','*.BMP','*.TIF'}))
-                    % --- Rename newly created folder acc. to pic examples
-                    % show pics
-                    fg = figure('NumberTitle','Off','Name',strngDir);
-                    set(fg, 'Position', get(0,'ScreenSize'));
-                    for n=1:min(length(ix),6)
-                        subplot(2,3,n);
-                        imshow([pwd,'\',strngDir,'\',s(ix(n)).name]);
-                    end
-                    % request Description
-                    strngDesc = inputdlg('Short Description:');
-                    close(fg);
-                    % rename folder (delete if Description == 'XXX')
-                    if strcmp(strngDesc,'XXX')
-                        rmdir([pwd,'\',strngDir],'s');
-                        fprintf('\nDirectory "%s" selected to be removed by user.',[pwd,'\',strngDir]);
-                    else
-                        movefile([pwd,'\',strngDir],[pwd,'\',strngDir,'_',strngDesc{:}]);
-                        fprintf('\n Renamed Directory to "%s", Next!',[pwd,'_',strngDesc{:}]);
-                    end
-                    % ---
-                end
+%                 if (ismember(upper(ext),{'*.JPG','*.JPEG','*.PNG','*.GIF','*.BMP','*.TIF'}))
+%                     % --- Rename newly created folder acc. to pic examples
+%                     % show pics
+%                     fg = figure('NumberTitle','Off','Name',strngDir);
+%                     set(fg, 'Position', get(0,'ScreenSize'));
+%                     for n=1:min(length(ix),6)
+%                         subplot(2,3,n);
+%                         imshow([pwd,'\',strngDir,'\',s(ix(n)).name]);
+%                     end
+%                     % request Description
+%                     strngDesc = inputdlg('Short Description:');
+%                     close(fg);
+%                     % rename folder (delete if Description == 'XXX')
+%                     if strcmp(strngDesc,'XXX')
+%                         rmdir([pwd,'\',strngDir],'s');
+%                         fprintf('\nDirectory "%s" selected to be removed by user.',[pwd,'\',strngDir]);
+%                     else
+%                         movefile([pwd,'\',strngDir],[pwd,'\',strngDir,'_',strngDesc{:}]);
+%                         fprintf('\n Renamed Directory to "%s", Next!',[pwd,'_',strngDesc{:}]);
+%                     end
+%                     % ---
+%                 end
                 fprintf('\n    ...done!');
             end
         end
